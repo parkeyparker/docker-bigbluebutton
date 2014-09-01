@@ -2,7 +2,7 @@ FROM ubuntu:10.04
 MAINTAINER Khoi Lai
 
 RUN apt-get -y update
-RUN apt-get install -y language-pack-en vim wget
+RUN apt-get install -y language-pack-en vim wget curl
 RUN update-locale LANG=en_US.UTF-8
 RUN dpkg-reconfigure locales
 
