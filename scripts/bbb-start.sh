@@ -3,7 +3,7 @@
 # Author: Juan Luis Baptiste <juan.baptiste@gmail.com>
 
 function get_ip (){
-    /sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'
+    curl ip.appspot.com
 }
 
 IP=`get_ip`
