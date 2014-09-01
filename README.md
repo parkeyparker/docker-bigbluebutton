@@ -26,3 +26,6 @@ You could do
 
     sudo docker start bbb
     sudo docker stop bbb
+### Bigbluebutton SALT
+    
+    a1ab45a9fd1c21c6ac9314166d9dc3c9
