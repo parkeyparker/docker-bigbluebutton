@@ -13,7 +13,7 @@ RUN wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | apt-key add -
 RUN echo "deb http://ubuntu.bigbluebutton.org/lucid_dev_081/ bigbluebutton-lucid main" | tee /etc/apt/sources.list.d/bigbluebutton.list
 
 #Add multiverse repo
-RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | tee -a /etc/apt/sources.list
+RUN echo "deb http://archive.ubuntu.com/ubuntu/ lucid multiverse" | tee -a /etc/apt/sources.list
 RUN apt-get -y update
 RUN apt-get -y dist-upgrade
 
@@ -48,7 +48,7 @@ RUN apt-get install -y tomcat6
 ADD scripts/tomcat6 /etc/init.d/
 
 #Install BigBlueButton
-RUN su - -c "apt-get install -y bigbluebutton bbb-demo" 
+RUN su - -c "apt-get install -y bigbluebutton" 
 
 EXPOSE 80 9123 1935
 

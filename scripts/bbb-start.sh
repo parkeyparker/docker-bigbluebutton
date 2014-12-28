@@ -21,4 +21,8 @@ echo -e "Use this IP address to locally access your \nBigBlueButton container: \
 echo -e "*******************************************\n"
 
 #Ugly hack: Infinite loop to maintain the container running
-while true;do sleep 100000;done
+#while true;do sleep 100000;done
+
+# dump logs to stdout for docker log viewing
+# ideally each service should be in a seperate container
+tail -f -n0 /var/log/bigbluebutton/*
