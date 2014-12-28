@@ -13,16 +13,19 @@ service redis-server-2.2.4 start
 service bbb-openoffice-headless start
 echo -e "Updating BigBlueButton IP address configuration...\n"
 bbb-conf --setip $IP
+echo -e "Setting BigBlueButton secret...\n"
+bbb-conf --setsecret $secret
 echo -e "Checking BigBlueButton configuration...\n"
 bbb-conf --check
 
 echo -e "*******************************************"
-echo -e "Use this IP address to locally access your \nBigBlueButton container: \n\n$IP\n"
+echo -e "Use the following details to access your BBB container:\n"
+bbb-conf --secret
 echo -e "*******************************************\n"
 
 #Ugly hack: Infinite loop to maintain the container running
 #while true;do sleep 100000;done
 
 # dump logs to stdout for docker log viewing
-# ideally each service should be in a seperate container
+# ideally each service should be in a seperate container which could avoid this
 tail -f -n0 /var/log/bigbluebutton/*

@@ -18,7 +18,11 @@ And then you can run a container from it, see instructions below on how to do it
 This is still an **alpha version** use it at your own risk. There is still some stuff about how to handle the different services that conform the BigBlueButton app inside the docker container that I need to improve.
 
 ### To Init a Bigbluebutton container
-    sudo docker run -d -p 9123:9123 -p 80:80 -p 1935:1935 --name bbb khoiln/docker-bigbluebutton
+    sudo docker run -d -p 9123:9123 -p 80:80 -p 1935:1935 --name bbb jamesyale/docker-bigbluebutton
+### (optional) To Init a Bigbluebutton container with a known secret
+    sudo docker run -d -p 9123:9123 -p 80:80 -p 1935:1935 -e secret=<bbbsecret> --name bbb jamesyale/docker-bigbluebutton
+### (optional/recommended for production use) To Init a Bigbluebutton container with a known secret and external storage
+    sudo docker run -d -p 9123:9123 -p 80:80 -p 1935:1935 -e secret=<bbbsecret> -v /path/to/some/storage /var/bigbluebutton --name bbb jamesyale/docker-bigbluebutton
 
 ### Start and Stop Bigbluebutton
 From now on you could refer to Bigbluebutton container as "bbb"

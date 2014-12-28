@@ -38,14 +38,14 @@ RUN update-alternatives --install /usr/bin/gem gem /usr/bin/gem1.9.2 500
 
 #Install ffmpeg
 RUN apt-get install -y build-essential git-core checkinstall yasm texi2html libvorbis-dev libx11-dev libxfixes-dev zlib1g-dev pkg-config
-ADD deb/ffmpeg_5:2.0.1-1_amd64.deb .
+COPY deb/ffmpeg_5:2.0.1-1_amd64.deb .
 RUN dpkg -i ffmpeg_5:2.0.1-1_amd64.deb
 
 #Install Tomcat prior to bbb installation
 RUN apt-get install -y tomcat6
 
 #Replace init script, installed one is broken
-ADD scripts/tomcat6 /etc/init.d/
+COPY scripts/tomcat6 /etc/init.d/
 
 #Install BigBlueButton
 RUN su - -c "apt-get install -y bigbluebutton" 
@@ -53,6 +53,6 @@ RUN su - -c "apt-get install -y bigbluebutton"
 EXPOSE 80 9123 1935
 
 #Add helper script to start bbb
-ADD scripts/bbb-start.sh /usr/bin/
+COPY scripts/bbb-start.sh /usr/bin/
 
 CMD ["/usr/bin/bbb-start.sh"]
