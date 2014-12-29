@@ -1,5 +1,5 @@
 FROM ubuntu:10.04
-MAINTAINER Khoi Lai
+MAINTAINER James Yale jim@thebiggame.org
 
 RUN apt-get -y update
 RUN apt-get install -y language-pack-en vim wget curl
