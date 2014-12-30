@@ -15,6 +15,8 @@ echo -e "Updating BigBlueButton IP address configuration...\n"
 bbb-conf --setip $IP
 echo -e "Setting BigBlueButton secret...\n"
 bbb-conf --setsecret $secret
+echo -e "Setting BigBlueButton hostname...\n"
+bbb-conf --setip $host
 echo -e "Restarting BigBlueButton to apply new secret...\n"
 bbb-conf --restart
 echo -e "Checking BigBlueButton configuration...\n"
