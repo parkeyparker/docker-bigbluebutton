@@ -6,13 +6,15 @@ function get_ip (){
     curl ip.appspot.com
 }
 
-IP=`get_ip`
+if [ -z "$host" ]; then
+  host=`get_ip`
+fi
 
 echo -e "Starting BigBlueButton services...\n"
 service redis-server-2.2.4 start
 service bbb-openoffice-headless start
 echo -e "Updating BigBlueButton IP address configuration...\n"
-bbb-conf --setip $IP
+bbb-conf --setip $host
 echo -e "Setting BigBlueButton secret...\n"
 bbb-conf --setsecret $secret
 echo -e "Setting BigBlueButton hostname...\n"
