@@ -24,7 +24,7 @@ https://registry.hub.docker.com/u/khoiln/bigbluebutton/
 ### (optional) To Init a Bigbluebutton container with a known secret
     sudo docker run -d -p 9123:9123 -p 80:80 -p 1935:1935 -e secret=<bbbsecret> --name bbb jamesyale/docker-bigbluebutton
 ### (optional/recommended for production use) To Init a Bigbluebutton container with a known secret, hostname and external storage
-    sudo docker run -d -p 9123:9123 -p 80:80 -p 1935:1935 -e secret=<bbbsecret> -e host=<hostname/IP> -v /path/to/some/storage /var/bigbluebutton --name bbb jamesyale/docker-bigbluebutton
+    sudo docker run -d -p 9123:9123 -p 80:80 -p 1935:1935 -e secret=<bbbsecret> -e host=<hostname/IP> -v /path/to/some/storage:/var/bigbluebutton -v /path/to/some/other/storage:/var/freeswitch --name bbb jamesyale/docker-bigbluebutton
 
 From now on you could refer to Bigbluebutton container as "bbb"
 You could do
