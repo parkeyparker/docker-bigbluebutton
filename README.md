@@ -7,6 +7,7 @@ More info about BigBlueButton at: http://bigbluebutton.org/
 ## Version
 0.1 Tagged first docker registry release
 0.2 Add option for setting hostname of bbb instance (bbb-conf --setip)
+0.3 Fix broken 0.2 tag
 
 ## About this image and the Dockerfile:
 
